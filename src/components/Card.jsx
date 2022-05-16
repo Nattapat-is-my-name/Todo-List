@@ -1,6 +1,5 @@
 import { Grid } from "@mui/material";
-import Loging from "./Loging";
-export default function Card() {
+export default function Card(props) {
     return(
         <Grid
     container
@@ -13,7 +12,7 @@ export default function Card() {
     <Grid item xs={3}>
       <div>
           <h1 style={{ color: "white" }}>
-              <Loging/>
+              {props.children}
           </h1>
       </div>
     </Grid>

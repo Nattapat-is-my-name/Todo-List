@@ -1,11 +1,17 @@
 import "./App.css";
 import Navb from "./components/Navb";
-import Card from "./components/Card";
+import Loging from "./components/Loging";
+import Register from "./components/Register";
+import { Routes, Route } from "react-router-dom";
+
 function App() {
   return (
     <div className="App">
       <Navb />
-      <Card/>
+      <Routes>
+        <Route path="/" element={<Loging />} />
+        <Route path="Register" element={<Register />} />
+      </Routes>
     </div>
   );
 }
