@@ -34,6 +34,12 @@ export default function Register() {
             <TextField
               fullWidth
               id="outlined-basic"
+              label="Email"
+              variant="outlined"
+            />
+            <TextField
+              fullWidth
+              id="outlined-basic"
               label="Password"
               variant="outlined"
             />

@@ -20,9 +20,9 @@ export default function Navb() {
             ToDo List
           </Typography>
           <Button color="inherit" LinkComponent={NavLink} to="/">
-              Login
+            Login
           </Button>
-          <Button color="inherit" LinkComponent={NavLink} to="Register">
+          <Button color="inherit" LinkComponent={NavLink} to="register">
             Register
           </Button>
         </Toolbar>

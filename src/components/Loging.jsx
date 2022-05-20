@@ -4,7 +4,20 @@ import { Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 import Card from "./Card";
+import { useContext, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { user } from "../Context/User";
+
 export default function Loging() {
+  const {  setfulname } = useContext(user);
+  const [name, setname] = useState("");
+
+  const getinName = (props) => {
+    setname(props.target.value);
+  };
+  const onSubmit = () => {
+    setfulname(name);
+  };
   return (
     <Card>
       <Box
@@ -20,7 +33,7 @@ export default function Loging() {
       >
         <Typography align="center" color={"black"} fontSize="2rem">
           {" "}
-          Login{" "}
+          Login {" "}
         </Typography>
         <Box style={{ padding: 5 }} marginTop={5}>
           <Stack gap={4}>
@@ -29,6 +42,7 @@ export default function Loging() {
               id="outlined-basic"
               label="Username"
               variant="outlined"
+              onChange={getinName}
             />
 
             <TextField
@@ -37,7 +51,13 @@ export default function Loging() {
               label="Password"
               variant="outlined"
             />
-            <Button variant="contained" sx={{ borderRadius: 10 }}>
+            <Button
+              variant="contained"
+              sx={{ borderRadius: 10 }}
+              onClick={onSubmit}
+              LinkComponent={NavLink}
+              to="main"
+            >
               LOGIN
             </Button>
           </Stack>
